@@ -1,0 +1,19 @@
+{
+  "name": "kim-hyejung",
+  "module": "index.ts",
+  "type": "module",
+  "bin": "./index.ts",
+  "private": true,
+  "scripts": {
+    "start": "bun index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "boxen": "^8.0.1"
+  }
+}
