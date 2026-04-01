@@ -1,23 +1,23 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 import { styleText } from "node:util";
 import boxen from "boxen";
 
 // ── 색상 팔레트 (우주 테마) ──
-const dim = (s: string) => styleText("dim", s);
-const yellow = (s: string) => styleText("yellow", s);
-const brightYellow = (s: string) => styleText(["bold", "yellow"], s);
-const blue = (s: string) => styleText("blue", s);
-const magenta = (s: string) => styleText("magenta", s);
-const white = (s: string) => styleText("white", s);
-const cyan = (s: string) => styleText("cyan", s);
+const dim = (s) => styleText("dim", s);
+const yellow = (s) => styleText("yellow", s);
+const brightYellow = (s) => styleText(["bold", "yellow"], s);
+const blue = (s) => styleText("blue", s);
+const magenta = (s) => styleText("magenta", s);
+const white = (s) => styleText("white", s);
+const cyan = (s) => styleText("cyan", s);
 
 // ── 프로필 카드 ──
 const name = styleText(["bold", "white"], "Kim Hyejung");
 const title = dim("Software Engineer");
-const label = (s: string) => brightYellow(s);
-const val = (s: string) => white(s);
-const link = (s: string) => styleText(["blue", "underline"], s);
+const label = (s) => brightYellow(s);
+const val = (s) => white(s);
+const link = (s) => styleText(["blue", "underline"], s);
 
 const content = [
   `${name}`,
@@ -40,7 +40,7 @@ const profileCard = boxen(content, {
 });
 
 // ── 별 하늘 라인 ──
-const starLine = (seed: number, width: number) => {
+const starLine = (seed, width) => {
   const stars = [" ", " ", " ", " ", ".", " ", " ", "·", " ", " ", " ", " ", "✦", " ", " ", " ", " ", " ", "˚", " ", " ", " ", "*", " ", " ", " ", " ", "⋆", " ", " "];
   let line = "";
   for (let i = 0; i < width; i++) {
@@ -57,7 +57,7 @@ const starLine = (seed: number, width: number) => {
 };
 
 // 고정 폭 장식 헬퍼 (visual width 보장)
-const deco = (visual: string, width: number) => {
+const deco = (visual, width) => {
   const stripped = visual.replace(/\x1b\[[0-9;]*m/g, "");
   const pad = Math.max(0, width - stripped.length);
   return visual + " ".repeat(pad);

@@ -1,23 +1,19 @@
 {
   "name": "kim-hyejung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kim Hyejung — run npx kim-hyejung to see it",
-  "module": "index.ts",
   "type": "module",
-  "bin": "./index.ts",
+  "engines": {
+    "node": ">=20.12.0"
+  },
+  "bin": "./index.js",
   "scripts": {
-    "start": "bun index.ts"
+    "start": "node index.js"
   },
   "keywords": ["terminal", "profile", "card", "cli"],
   "author": "Kim Hyejung <hyejungg.dev@gmail.com>",
   "license": "MIT",
-  "files": ["index.ts", "package.json"],
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
+  "files": ["index.js"],
   "dependencies": {
     "boxen": "^8.0.1"
   }
